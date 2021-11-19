@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const CatalogoWrapper = styled.div`
-    height: 100%;    
+    width: 70%;    
+    margin: 0 auto;
 `
 export const Title = styled.span`
     margin-top: 1rem;
@@ -17,7 +18,7 @@ export const SubTitle = styled.span`
 `
 export const ListCard = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 `
 
 export const Input = styled.input`
