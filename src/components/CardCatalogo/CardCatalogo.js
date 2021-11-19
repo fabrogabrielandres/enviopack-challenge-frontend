@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Wrapper, Description, Img, Price } from './styles'
 
 export const CardCatalogo = ({image,product}) => {
+    console.log(product);
     
     return (
         <Wrapper>
