@@ -1,10 +1,10 @@
 import React from 'react'
-import { Button, CardWrapper, Description, Img, Price } from './styles'
+import { Button, Wrapper, Description, Img, Price } from './styles'
 
 export const CardCatalogo = ({image,product}) => {
     
     return (
-        <CardWrapper>
+        <Wrapper>
             <Img src={image}/>
             <Description>
                 {product.title}
@@ -15,6 +15,6 @@ export const CardCatalogo = ({image,product}) => {
             <Button>
                 Agregar al Carrito                
             </Button>                        
-        </CardWrapper>
+        </Wrapper>
     )
 }

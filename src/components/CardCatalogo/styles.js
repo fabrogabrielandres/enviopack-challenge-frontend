@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardWrapper = styled.div`
+export const Wrapper = styled.div`
     max-width: 250px;
     display: flex;
     min-height: 370px;

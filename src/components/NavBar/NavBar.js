@@ -1,9 +1,9 @@
 import React from 'react'
-import { NavLeft, NavRight, NavWrapper, LinkR, LinkL } from './styles'
+import { NavLeft, NavRight, Wrapper, LinkR, LinkL } from './styles'
 
 export const NavBar = () => {
     return (
-        <NavWrapper>
+        <Wrapper>
             <NavLeft>
                 <LinkL>
                     Tienda de Productos
@@ -21,6 +21,6 @@ export const NavBar = () => {
                 </LinkR>
             </NavRight>
 
-        </NavWrapper>
+        </Wrapper>
     )
 }

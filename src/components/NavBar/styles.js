@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const NavWrapper = styled.div`
+export const Wrapper = styled.div`
     max-width: 1360px;
     display: flex;
     height: 70px;

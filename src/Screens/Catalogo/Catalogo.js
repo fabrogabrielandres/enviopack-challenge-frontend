@@ -1,22 +1,27 @@
 import React from 'react'
 import { ListCardCatalogo } from '../../components/ListCardCatalogo/ListCardCatalogo'
-import { CatalogoLeft, CatalogoRight, CatalogoWrapper, ListCard, Title, SubTitle, Input } from './styled'
+import { HeaderLeft, HeaderRight, Wrapper, Header, Title, SubTitle, Input, Select, Option } from './styled'
 
 export const Catalogo = () => {
     return (
-        <CatalogoWrapper>
+        <Wrapper>
             <Title>
                 Catalogo
             </Title>
-            <ListCard>
-                <CatalogoLeft>
+            <Header>
+                <HeaderLeft>
                     <Input placeholder="Buscar productos por nombre" />
-                </CatalogoLeft>
-                <CatalogoRight>
+                </HeaderLeft>
+                <HeaderRight>
                     <SubTitle>Ordenar Por</SubTitle>
-                </CatalogoRight>
-            </ListCard>
-            <ListCardCatalogo/>
-        </CatalogoWrapper>
+                        <Select>
+                            <Option selected>Seleccionar</Option>
+                            <Option>Precio (asc)</Option>
+                            <Option>Precio (desc)</Option>
+                        </Select>                    
+                </HeaderRight>
+            </Header>
+            <ListCardCatalogo />
+        </Wrapper>
     )
 }
