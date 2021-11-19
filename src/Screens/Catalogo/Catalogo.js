@@ -1,5 +1,5 @@
 import React from 'react'
-import { ListCardCatalogo } from '../../components/ListCardCatalogo/ListCardCatalogo'
+import { Products } from '../../components/Products/Products'
 import { HeaderLeft, HeaderRight, Wrapper, Header, Title, SubTitle, Input, Select, Option } from './styled'
 
 export const Catalogo = () => {
@@ -21,7 +21,7 @@ export const Catalogo = () => {
                         </Select>                    
                 </HeaderRight>
             </Header>
-            <ListCardCatalogo />
+            <Products />
         </Wrapper>
     )
 }

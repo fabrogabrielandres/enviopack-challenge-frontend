@@ -8,6 +8,6 @@ export const Wrapper = styled.div`
 
 `
 
-export const RenderList = styled.div`
+export const RenderProducts = styled.div`
 
 `
