@@ -33,7 +33,7 @@ export const Catalogo = () => {
                     </Select>
                 </HeaderRight>
             </Header>
-            <Products OrderProducts={products} />
+            <Products OrderProducts={SortAndFind.OrderProducts} />
         </Wrapper>
     )
 

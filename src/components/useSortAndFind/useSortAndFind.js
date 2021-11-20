@@ -6,6 +6,10 @@ export const useSortAndFind = (products) => {
     const [find, setFind] = useState("")
 
     useEffect(() => {
+        setOrderProducts(products)
+    }, [products])
+
+    useEffect(() => {
         if (sort === "default") {
             setOrderProducts((prev) =>
                 [...prev].sort((a, b) => a.id - b.id)
