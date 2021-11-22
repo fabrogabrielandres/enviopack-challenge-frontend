@@ -7,7 +7,11 @@ import { HeaderLeft, HeaderRight, Wrapper, Header, Title, SubTitle, Input, Selec
 
 export const Catalogo = () => {
 
+
+    //obtengo la lista de productos del state 
     const products = useSelector(state => state.product.Products)
+
+    //paso los productos para que el coostom hooks que devuelva una copia del array ya procesado segun como ordenemos y si buscamos por palabra
     const SortAndFind = useSortAndFind(products)
 
 
@@ -33,7 +37,7 @@ export const Catalogo = () => {
                     </Select>
                 </HeaderRight>
             </Header>
-            <Products OrderProducts={SortAndFind.OrderProducts} />
+            <Products OrderedProducts={SortAndFind.OrderedProducts} />
         </Wrapper>
     )
 

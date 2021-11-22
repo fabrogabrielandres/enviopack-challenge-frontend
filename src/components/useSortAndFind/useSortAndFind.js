@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from 'react'
 
 export const useSortAndFind = (products) => {
-    const [OrderProducts, setOrderProducts] = useState(products)
+    const [OrderedProducts, setOrderedProducts] = useState(products)
     const [sort, setSort] = useState("default")
     const [find, setFind] = useState("")
 
     useEffect(() => {
-        setOrderProducts(products)
+        setOrderedProducts(products)
     }, [products])
 
     useEffect(() => {
         if (sort === "default") {
-            setOrderProducts((prev) =>
+            setOrderedProducts((prev) =>
                 [...prev].sort((a, b) => a.id - b.id)
             );
         } else if (sort === "asc") {
-            setOrderProducts((prev) =>
+            setOrderedProducts((prev) =>
                 [...prev].sort((a, b) => a.price - b.price)
             );
         } else {
-            setOrderProducts((prev) =>
+            setOrderedProducts((prev) =>
                 [...prev].sort((a, b) => b.price - a.price)
             );
         }
@@ -28,7 +28,7 @@ export const useSortAndFind = (products) => {
     let arreglo
     useEffect(() => {
         if (find !== "")
-            setOrderProducts((prev) =>
+            setOrderedProducts((prev) =>
                 [...prev].filter((prev) =>
                     console.log(prev)
                 )
@@ -38,7 +38,7 @@ export const useSortAndFind = (products) => {
 
     return (
         {
-            setFind, setSort, OrderProducts
+            setFind, setSort, OrderedProducts
 
         }
     )
