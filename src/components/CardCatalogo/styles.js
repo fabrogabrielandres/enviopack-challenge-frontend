@@ -7,8 +7,8 @@ export const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2);
-    margin: 10px auto;
+    margin: 10px 0 10px 0;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2);    
 `
 export const Img = styled.img`
     width: 70%;

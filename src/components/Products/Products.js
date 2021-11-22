@@ -13,7 +13,7 @@ export const Products = ({ OrderedProducts }) => {
             <>
                 {currentItems &&
                     currentItems.map((item, idx) => (
-                        <CardCatalogo image={image} product={item}  key={idx}/>
+                        <CardCatalogo image={image} product={item} key={idx} />
                     ))}
             </>
         )
@@ -46,11 +46,10 @@ export const Products = ({ OrderedProducts }) => {
 
         return (
             <>
-                <Wrapper>
-                    <RenderProducts>
-                        <Items currentItems={currentItems} />
-                    </RenderProducts>
-                </Wrapper>
+                <RenderProducts>
+                    <Items currentItems={currentItems} />
+                </RenderProducts>
+
                 <ReactPaginate
                     breakLabel="..."
                     nextLabel="=>"
