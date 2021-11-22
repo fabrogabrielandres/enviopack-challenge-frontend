@@ -8,14 +8,13 @@ export const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2);
-    margin: 10px;
+    margin: 10px auto;
 `
 export const Img = styled.img`
     width: 70%;
 `
 export const Description = styled.p`
-    text-align: center;
-    
+    text-align: center;    
 `
 
 export const Price = styled.p`
@@ -28,6 +27,6 @@ export const Button = styled.button`
     color: white;
     border-bottom: none;
     width: 80%;
-    height: 40px;
-    font-size: 15px;
+    padding: 0.8em;
+    font-size: 1rem;
 `

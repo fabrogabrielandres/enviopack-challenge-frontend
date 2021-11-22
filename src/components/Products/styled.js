@@ -5,13 +5,13 @@ export const Wrapper = styled.div`
     flex-direction: column;
     margin-top:20px;
     justify-content: space-between;
-
 `
 
 export const RenderProducts = styled.div`
-       display: flex;
+    display: flex;
     flex-wrap: wrap;
     margin-top:20px;
     justify-content: space-between;
+    margin: 0 auto; 
 
 `

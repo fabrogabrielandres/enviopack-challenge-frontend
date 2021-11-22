@@ -3,6 +3,7 @@ import ReactPaginate from 'react-paginate'
 import image from "../../assets/image-product.jpg"
 import { CardCatalogo } from '../CardCatalogo/CardCatalogo'
 import { RenderProducts, Wrapper } from './styled'
+import "./.element.styled.css"
 
 
 export const Products = ({ OrderedProducts }) => {
@@ -11,14 +12,14 @@ export const Products = ({ OrderedProducts }) => {
         return (
             <>
                 {currentItems &&
-                    currentItems.map((item) => (
-                        <CardCatalogo image={image} product={item} />
+                    currentItems.map((item, idx) => (
+                        <CardCatalogo image={image} product={item}  key={idx}/>
                     ))}
             </>
         )
     }
 
-    function PaginatedItems({ itemsPerPage = 6  }) {
+    function PaginatedItems({ itemsPerPage = 6 }) {
         // We start with an empty list of items.
         const [currentItems, setCurrentItems] = useState(null);
         const [pageCount, setPageCount] = useState(0);
@@ -44,21 +45,24 @@ export const Products = ({ OrderedProducts }) => {
         };
 
         return (
-            <Wrapper>
-                <RenderProducts>
-                    <Items currentItems={currentItems} />
-                </RenderProducts>
+            <>
+                <Wrapper>
+                    <RenderProducts>
+                        <Items currentItems={currentItems} />
+                    </RenderProducts>
+                </Wrapper>
                 <ReactPaginate
                     breakLabel="..."
-                    nextLabel="next >"
+                    nextLabel="=>"
                     onPageChange={handlePageClick}
                     pageRangeDisplayed={5}
                     pageCount={pageCount}
-                    previousLabel="< previous"
+                    previousLabel="<="
                     renderOnZeroPageCount={null}
                 />
-            </Wrapper>
+            </>
         );
+
     }
 
     return (

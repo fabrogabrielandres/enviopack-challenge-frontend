@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const useSortAndFind = (products) => {
     const [OrderedProducts, setOrderedProducts] = useState(products)
@@ -25,7 +25,6 @@ export const useSortAndFind = (products) => {
         }
     }, [sort,products]);
 
-    let arreglo
     useEffect(() => {
         if (find !== "")
             setOrderedProducts((prev) =>
