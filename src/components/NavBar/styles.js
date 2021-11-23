@@ -29,6 +29,7 @@ export const NavRight = styled.div`
     margin: 0px 50px;
     color: white;
     cursor: pointer;
+    text-transform: uppercase;
 `
 
 export const LinkR = styled.p`

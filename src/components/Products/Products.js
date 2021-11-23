@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ReactPaginate from 'react-paginate'
 import image from "../../assets/image-product.jpg"
 import { CardCatalogo } from '../CardCatalogo/CardCatalogo'
-import { RenderProducts, Wrapper } from './styled'
+import { RenderProducts } from './styled'
 import "./.element.styled.css"
 
 
