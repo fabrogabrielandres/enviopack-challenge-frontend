@@ -1,17 +1,16 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router'
-import { itWasAdd } from '../../redux/productsSlice'
-import { addToCard } from '../../redux/userSlice'
+import { productAdd } from '../../redux/productsSlice'
+import { addToCart } from '../../redux/userSlice'
 import { Button, Wrapper, Description, Img, Price } from './styles'
 
 export const CardCatalogo = ({ image, product }) => {
 
     const dispatch = useDispatch()
-    const navigate = useNavigate() 
+    const navigate = useNavigate()
 
-    console.log(product);
-    
+
 
     return (
         <Wrapper>
@@ -25,7 +24,7 @@ export const CardCatalogo = ({ image, product }) => {
             {
                 product.isAdd === true ?
                     <Button
-
+                        onClick={() =>navigate("/carrito")}
                     >
                         Ver Carrito
                     </Button>
@@ -33,9 +32,9 @@ export const CardCatalogo = ({ image, product }) => {
                     <Button
                         onClick={
                             () => {
-                                dispatch(addToCard(product))
-                                dispatch(itWasAdd(product))
-                                navigate("/carrito")                                
+                                dispatch(addToCart(product))
+                                dispatch(productAdd(product))
+                                navigate("/carrito")
                             }
                         }
                     >

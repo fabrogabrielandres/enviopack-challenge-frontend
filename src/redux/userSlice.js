@@ -13,16 +13,22 @@ const userSlice = createSlice({
         "shoppingCart": []
     },
     reducers: {
-        addToCard: (state, action) => {
+        addToCart: (state, action) => {
             state.shoppingCart = [...state.shoppingCart, { ...action.payload, isAdd: true }]
         },
         loadUser: (state, action) => {
-            state.datos ={...action.payload}
+            state.datos = { ...action.payload }
         },
+        removeToCart: (state, action) => {
+            state.shoppingCart = state.shoppingCart.filter((item) =>
+                (item.id !== action.payload.id) ? item : null
+            )
+        }
+
 
 
     },
 });
 
-export const { addToCard, loadUser } = userSlice.actions
+export const { addToCart, loadUser, removeToCart } = userSlice.actions
 export default userSlice.reducer;

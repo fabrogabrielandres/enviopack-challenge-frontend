@@ -7,12 +7,17 @@ const productsSlice = createSlice({
     },
     reducers: {
         loadProducts: (state, action) => {
-            state.Products =  action.payload.map((item) => item = { ...item, isAdd: false })
+            state.Products = action.payload.map((item) => item = { ...item, isAdd: false })
         },
-        itWasAdd: (state, action)=>{
-            state.Products = state.Products.map((item) => (action.payload.id===item.id) ? { ...item,isAdd:true} : item )
+        productAdd: (state, action) => {
+            state.Products = state.Products.map((item) => (action.payload.id === item.id) ? { ...item, isAdd: true } : item)
+        },
+        productRemove: (state, action) => {
+            state.Products = state.Products.map((item) =>
+                (item.id !== action.payload.id) ? item : {...item, isAdd:false}
+            )
         }
     },
 });
-export const  { loadProducts,itWasAdd } = productsSlice.actions
+export const { loadProducts, productAdd,productRemove } = productsSlice.actions
 export default productsSlice.reducer;
