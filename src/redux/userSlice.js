@@ -23,12 +23,17 @@ const userSlice = createSlice({
             state.shoppingCart = state.shoppingCart.filter((item) =>
                 (item.id !== action.payload.id) ? item : null
             )
-        }
+        },
+        debitCredit: (state, action) => {
+            state.shoppingCart = []
+            state.datos = { ...state.datos, credit: action.payload }
+        },
+
 
 
 
     },
 });
 
-export const { addToCart, loadUser, removeToCart } = userSlice.actions
+export const { addToCart, loadUser, removeToCart,debitCredit } = userSlice.actions
 export default userSlice.reducer;

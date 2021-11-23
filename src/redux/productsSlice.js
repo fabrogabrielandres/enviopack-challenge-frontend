@@ -16,8 +16,11 @@ const productsSlice = createSlice({
             state.Products = state.Products.map((item) =>
                 (item.id !== action.payload.id) ? item : {...item, isAdd:false}
             )
-        }
+        },
+        resetProducts: (state, action) => {
+            state.Products = state.Products.map((item) => item = { ...item, isAdd: false })
+        },
     },
 });
-export const { loadProducts, productAdd,productRemove } = productsSlice.actions
+export const { loadProducts, productAdd,productRemove,resetProducts } = productsSlice.actions
 export default productsSlice.reducer;
