@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router'
 import { CardCarrito } from '../../components/CardCarrito/CardCarrito'
-import { Resume, Title, Total, Wrapper } from './styles'
+import { Button, Footer, Resume, Title, Total, Wrapper } from './styles'
 
 export const Carrito = () => {
+    const navigate = useNavigate()
     const shoppingCart = useSelector(state => state.user.shoppingCart)
     const [loading, setloading] = useState(false)
     const [total, setTotal] = useState(0)
@@ -23,7 +25,11 @@ export const Carrito = () => {
     }, [shoppingCart])
 
     if (loading === false) {
-        return (<h1>sin elemntos en carritos</h1>)
+        return (<h1
+        style={{
+            textAlign:'center'
+        }}
+        >sin articulos en carritos</h1>)
     }
     else {
         return (
@@ -44,6 +50,17 @@ export const Carrito = () => {
                         {`$ ${total}`}
                     </Total>
                 </Resume>
+                <Footer>
+                    <Button
+                        onClick={() => navigate("/")}
+                    >
+                        Volver a Catalogo
+                    </Button>
+                    <Button>
+                        Finalizar Compra
+                    </Button>
+                </Footer>
+
             </Wrapper >
         )
     }
