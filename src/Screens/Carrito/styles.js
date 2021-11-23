@@ -13,4 +13,18 @@ export const Title = styled.span`
 `
 
 
+export const Resume = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2); 
+`
+
+export const Total = styled.p`
+    margin: 10px;
+    font-weight: bold;
+`
+
+
+
 

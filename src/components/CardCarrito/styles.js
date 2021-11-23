@@ -33,4 +33,3 @@ export const Button = styled.button`
     padding: 0.8em;
     font-size: 1rem;
 `
-
