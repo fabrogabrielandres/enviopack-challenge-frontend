@@ -23,16 +23,20 @@ export const useSortAndFind = (products) => {
                 [...prev].sort((a, b) => b.price - a.price)
             );
         }
-    }, [sort,products]);
+    }, [sort, products]);
 
     useEffect(() => {
-        if (find !== "")
+        if (find !== "") {
             setOrderedProducts((prev) =>
-                [...prev].filter((prev) =>
-                    console.log(prev)
-                )
-            );
-    }, [find,products])
+                [...prev].filter((product)=>{
+                    console.log(product)
+                    return (product.title.toLowerCase().includes(find.toLowerCase()))
+                })
+            )
+        } else {
+            setOrderedProducts(products)
+        }
+    }, [find])
 
 
     return (
