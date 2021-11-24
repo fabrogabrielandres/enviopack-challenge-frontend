@@ -36,7 +36,7 @@ export const useSortAndFind = (products) => {
         } else {
             setOrderedProducts(products)
         }
-    }, [find])
+    }, [find,products])
 
 
     return (
