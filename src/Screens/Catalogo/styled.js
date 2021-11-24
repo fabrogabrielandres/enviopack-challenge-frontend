@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
     width: 70%;    
     margin: 0 auto;
+    @media (max-width:1080px){
+    width: 90%;
+    }
 `
 export const Title = styled.span`
     margin-top: 1rem;
@@ -18,8 +21,12 @@ export const SubTitle = styled.span`
 `
 export const Header = styled.div`
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
+    @media (max-width:460px){
+        justify-content: center;
+} 
 `
 
 export const Input = styled.input`
@@ -29,14 +36,16 @@ export const Input = styled.input`
     background-color: #f3f5f5;
     border: none;
     border-radius: 3px;
+
 `
 
 export const HeaderLeft = styled.div`
 
+
+
 `
 
 export const HeaderRight = styled.div`
-
 
 `
 
