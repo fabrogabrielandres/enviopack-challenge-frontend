@@ -27,6 +27,7 @@ export const NavBar = () => {
                 </LinkR>
                 <LinkR
                     onClick={() => navigate("/carrito", { replace: true })}
+                    style={{cursor:'pointer'}}
                 >
                     {`Carrito (${shoppingCart.length})`}
                 </LinkR>

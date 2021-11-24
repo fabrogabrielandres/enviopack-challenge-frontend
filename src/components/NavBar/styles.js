@@ -19,6 +19,7 @@ export const LinkL = styled.p`
     margin: 0px 50px;
     color: white;
     cursor: pointer;    
+    
 `
 
 export const NavRight = styled.div`
@@ -27,7 +28,6 @@ export const NavRight = styled.div`
     font-weight: bold;
     margin: 0px 50px;
     color: white;
-    cursor: pointer;
     text-transform: uppercase;
     background-color: black;
     transition: 2s all ease-in-out;
@@ -45,7 +45,6 @@ export const LinkR = styled.p`
     padding: 10px 0 10px 0;
     margin: 0px 50px;
     color: white;
-    cursor: pointer;    
 `
 export const Burger = styled.button`
     height: 100%;
