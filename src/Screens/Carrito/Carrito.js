@@ -25,7 +25,7 @@ export const Carrito = () => {
 
     const buy = () => {
         if ((credit - total) > 0) {
-            setItsPurchasable(true)
+            // setItsPurchasable(true)
             dispatch(debitCredit(credit - total))
             dispatch(resetProducts())
         }
@@ -53,7 +53,8 @@ export const Carrito = () => {
 
     return (
         <>
-            {succes && <SuccessAndError itspurchasable={itspurchasable} setSucces={setSucces} />}
+            {(succes && !itspurchasable) && <SuccessAndError itspurchasable={itspurchasable} setSucces={setSucces} />}
+           
             {!succes &&
                 < Wrapper >
                     <Title>
