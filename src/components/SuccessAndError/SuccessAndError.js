@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { Button, Message, Title, Wrapper } from './styled'
@@ -6,9 +6,17 @@ import { Button, Message, Title, Wrapper } from './styled'
 export const SuccessAndError = () => {
     let navigate = useNavigate()
     const {shoppingCart} = useSelector(state => state.user)
-    console.log(shoppingCart);
+    const [buy, setbuy] = useState(false)
     const messgeExitoso = "La Compra se realizo con exito"
     const messageFallo = "Ocurrio un error con la compra, revisa que el importe no supero el monto disponible en tu cuenta"
+
+    useEffect(() => {
+        if(shoppingCart.length>0 ){
+            setbuy(true)
+        }else{
+            setbuy(false)
+        }
+    }, [shoppingCart])
 
     return (<>
         <Title>
@@ -16,12 +24,12 @@ export const SuccessAndError = () => {
         </Title>
         <Wrapper>
             <Message>
-                {shoppingCart.lenght > 0 ?  messageFallo : messgeExitoso}
+                { buy ?  messageFallo : messgeExitoso}
             </Message>
             <Button
-                onClick={shoppingCart.lenght>0 ? () => navigate("/carrito") : () => navigate("/")}
+                onClick={buy ? () => navigate("/carrito") : () => navigate("/")}
             >
-                {shoppingCart.lenght > 0 ? "Volver a Carrito" :  "Volver a Catalogo"}
+                { buy ? "Volver a Carrito" :  "Volver a Catalogo"}
             </Button>
         </Wrapper>
     </>
