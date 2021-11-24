@@ -11,6 +11,7 @@ import { Carrito } from './Screens/Carrito/Carrito';
 import { Catalogo } from './Screens/Catalogo/Catalogo';
 import products from "./products.json"
 import profile from "./profile.json"
+import { SuccessAndError } from './components/SuccessAndError/SuccessAndError';
 
 export const App = () => {
   const dispatch = useDispatch()
@@ -24,6 +25,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Catalogo />} />
         <Route path="/carrito" element={<Carrito />} />
+        <Route path="/succces" element={<SuccessAndError/>}/>
       </Routes>
     </>
   )

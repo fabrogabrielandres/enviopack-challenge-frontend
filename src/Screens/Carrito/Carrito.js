@@ -2,21 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { CardCarrito } from '../../components/CardCarrito/CardCarrito'
-import { SuccessAndError } from '../../components/SuccessAndError/SuccessAndError'
 import { resetProducts } from '../../redux/productsSlice'
 import { debitCredit } from '../../redux/userSlice'
 import { Button, Footer, Resume, Title, Total, Wrapper } from './styles'
 
 export const Carrito = () => {
 
-    // para saber si hay articulos en el carrito
-    const [loading, setloading] = useState(false)
     //total acumulado de dinero para hacer la compra
     const [total, setTotal] = useState(0)
-    //determina si alcanza el monto para realizar la compra 
-    const [itspurchasable, setItsPurchasable] = useState(false)
-    //determina si intente hacer la compra
-    const [succes, setSucces] = useState(false)
+
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -25,37 +19,30 @@ export const Carrito = () => {
 
     const buy = () => {
         if ((credit - total) > 0) {
-            // setItsPurchasable(true)
             dispatch(debitCredit(credit - total))
             dispatch(resetProducts())
-        }
-        else {
-            setItsPurchasable(false)
         }
     }
 
     useEffect(() => {
         if (shoppingCart.length !== 0) {
-            setloading(true)
             setTotal(
                 shoppingCart.reduce((acc, next) =>
                     (acc = acc + next.price), 0)
             )
         }
         else {
-            setloading(false)
+            setTotal(0)
         }
     }, [shoppingCart])
 
 
 
-    if (loading === false) { return (<Title>sin articulos en carritos</Title>) }
+    if (total === 0) { return (<Title>sin articulos en carritos</Title>) }
 
     return (
         <>
-            {(succes && !itspurchasable) && <SuccessAndError itspurchasable={itspurchasable} setSucces={setSucces} />}
-           
-            {!succes &&
+            {
                 < Wrapper >
                     <Title>
                         Carrito
@@ -80,7 +67,7 @@ export const Carrito = () => {
                         <Button
                             onClick={() => {
                                 buy()
-                                setSucces(true)
+                                navigate("/succces")
                             }}
                         >
                             Finalizar Compra

@@ -1,9 +1,12 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { Button, Message, Title, Wrapper } from './styled'
 
-export const SuccessAndError = ({ itspurchasable ,setSucces}) => {
+export const SuccessAndError = () => {
     let navigate = useNavigate()
+    const {shoppingCart} = useSelector(state => state.user)
+    console.log(shoppingCart);
     const messgeExitoso = "La Compra se realizo con exito"
     const messageFallo = "Ocurrio un error con la compra, revisa que el importe no supero el monto disponible en tu cuenta"
 
@@ -13,12 +16,12 @@ export const SuccessAndError = ({ itspurchasable ,setSucces}) => {
         </Title>
         <Wrapper>
             <Message>
-                {itspurchasable ? messgeExitoso : messageFallo}
+                {shoppingCart.lenght > 0 ?  messageFallo : messgeExitoso}
             </Message>
             <Button
-                onClick={itspurchasable ? () => navigate("/") : () => setSucces(false)}
+                onClick={shoppingCart.lenght>0 ? () => navigate("/carrito") : () => navigate("/")}
             >
-                {itspurchasable ? "Volver a Catalogo" : "Volver a Carrito"}
+                {shoppingCart.lenght > 0 ? "Volver a Carrito" :  "Volver a Catalogo"}
             </Button>
         </Wrapper>
     </>
